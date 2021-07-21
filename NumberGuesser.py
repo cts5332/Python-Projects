@@ -1,17 +1,19 @@
 import random
 
-user_guess = int(input("Guess the random number: "))
 random_number = random.randint(0, 11)
 
-if (user_guess == random_number):
-    print("You guessed " +str(user_guess)+ " and the random number is " +str(random_number)+ " congratulations")
+while True:
+    user_guess = int(input("Guess a random number from 0-11: "))
 
-elif (user_guess < random_number):
-    n = random_number - user_guess
-    print("You did not guess the correct number, you were " +str(n)+ " off")
+    if (user_guess == random_number):
+        print("You guessed" ,user_guess, "and the random number is" ,random_number, "congratulations")
+        break
 
-else:
-    n = user_guess - random_number
-    print("You did not guess the correct number, you were " +str(n)+ " off")
+    elif (user_guess < random_number):
+        n = random_number - user_guess
+        print("You did not guess the correct number, you were" ,n, "off")
 
-print(random_number)
+    else:
+        n = user_guess - random_number
+        print("You did not guess the correct number, you were" ,n, "off")
+
